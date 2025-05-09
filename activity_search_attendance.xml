@@ -1,0 +1,92 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1c1c27"
+    android:padding="16dp"
+    tools:context=".SearchAttendanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:layout_marginBottom="60dp">
+
+        <EditText
+            android:id="@+id/editTextStartDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Start Date (YYYY-MM-DD)"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/editTextEndDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="End Date (YYYY-MM-DD)"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginTop="8dp" />
+
+        <EditText
+            android:id="@+id/editTextRollNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Roll Number"
+            android:inputType="text"
+            android:background="@drawable/edittext_bg"
+            android:padding="12dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="#AAAAAA"
+            android:layout_marginTop="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSubjectSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/spinner_bg" />
+
+        <Button
+            android:id="@+id/btnFetchAttendance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fetch Attendance"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:background="@drawable/spinner_background"
+            android:layout_marginTop="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_attendance_results"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnGenerateExcel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/excl"
+        app:maxImageSize="40dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:contentDescription="Generate Excel Report"
+        android:tooltipText="Export as Excel" />
+</FrameLayout>

@@ -1,0 +1,288 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1c1c27"
+    android:padding="16dp"
+    tools:context=".Main2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Add First Student? -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add First Student?"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <Spinner
+            android:id="@+id/spinnerAddStudent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            android:popupTheme="@style/CustomSpinnerDropdown" />
+
+        <Button
+            android:id="@+id/btnSearchAttendance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search Attendance"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/spinner_background"
+            android:layout_marginBottom="16dp"
+            android:padding="5dp" />
+
+        <!-- Student Details Layout -->
+        <LinearLayout
+            android:id="@+id/studentDetailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Student Name"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/editTextEnrollment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Enrollment Number"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/editTextMobile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Mobile Number"
+                android:inputType="phone"
+                android:layout_marginBottom="10dp" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter Email"
+                android:inputType="textEmailAddress"
+                android:layout_marginBottom="10dp" />
+
+            <Button
+                android:id="@+id/btnAddStudent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Student"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:padding="12dp"
+                android:background="@drawable/button_background"
+                android:layout_marginBottom="16dp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="select all✅"
+            android:textColor="@android:color/white"
+            android:layout_marginRight="20dp"
+            android:textStyle="bold"
+            android:gravity="right"
+            android:layout_marginBottom="10dp" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:orientation="vertical"
+            android:background="@drawable/spinner_background2">
+
+            <!-- ListView for students -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="26dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:text="Students"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="italic"
+                        app:layout_constraintStart_toStartOf="parent"
+                        tools:ignore="MissingConstraints" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:gravity="right"
+                        android:padding="10dp"
+                        android:text="Absent"
+                        android:textColor="@color/white"
+                        android:textSize="15dp"
+                        android:textStyle="italic"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/listViewStudents"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                android:layout_marginBottom="16dp"
+                android:padding="10dp"
+                android:scrollbars="vertical" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Type"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerType"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"
+            android:popupTheme="@style/CustomSpinnerDropdown" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="14dp"
+            android:text="Select Subject"
+            android:textSize="12sp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerSubject"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/edittext_bg"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp"
+            android:popupTheme="@style/CustomSpinnerDropdown" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/btnPickStartTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="8dp"
+                android:text="Select Start Time"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_background" />
+
+            <Button
+                android:id="@+id/btnPickEndTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:text="Select End Time"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:background="@drawable/button_background" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="1dp"
+            android:layout_gravity="center"
+            android:padding="8dp">
+
+            <CheckBox
+                android:id="@+id/checkbox_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notify by Email"
+                android:textSize="17dp"
+                android:buttonTint="@color/white"
+                android:textColor="@color/white" />
+
+            <CheckBox
+                android:id="@+id/checkbox_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notify by Message"
+                android:textSize="17dp"
+                android:layout_marginStart="24dp"
+                android:buttonTint="@color/white"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnNotify"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Notify Students"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:padding="12dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/spinner_background" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout?"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/border_textview" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
